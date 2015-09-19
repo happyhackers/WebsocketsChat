@@ -1,9 +1,7 @@
-﻿@{
-    ViewBag.Title = "Chat";
-}
+﻿@model PageSettings;
 
 <div class="text-center col-xs-12 col-md-12">
-    <h2>WebSocket Chat</h2>
+    <h2>Get in my websockets</h2>
     <div class="text-center col-xs-12 col-md-12 form-group">
         <input type="text" id="message" class="form-control" />
         <div id="dropzone" class="dropzone"></div>
@@ -18,10 +16,8 @@
     </div>
 </div>
 
+
 @section scripts {
-    <script src="~/Scripts/jquery.signalR-2.0.2.min.js"></script>
-    <script src="~/signalr/hubs"></script>
-    <script src="~/Scripts/dropzone.js"></script>
     <script>
         $(function () {
             //http://www.dropzonejs.com/

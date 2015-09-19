@@ -12,9 +12,10 @@ namespace SignalRMVCChat.Controllers
     {
         public ActionResult Index()
         {
-            return View();
+            return View(model: new PageSettings());
         }
 
+        [HttpPost]
         public ActionResult UploadPicture(string message, string name)
         {
             // Save picture to server

@@ -1,20 +1,41 @@
-﻿<!DOCTYPE html>
+﻿@model PageSettings;
+
+<!doctype html>
 <html>
-<head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@ViewBag.Title - My ASP.NET Application</title>
-    <link href="~/Content/bootstrap.min.css" rel="stylesheet" type="text/css" />
-    <link href="~/Content/dropzone.css" rel="stylesheet" type="text/css" />
-    <script src="~/Scripts/modernizr-2.6.2.js"></script>
-</head>
-<body>
-   <div class="container">
-        @RenderBody()
-    </div>
-   
-    <script src="~/Scripts/jquery-1.10.2.min.js"></script>
-    <script src="~/Scripts/bootstrap.min.js"></script>
-    @RenderSection("scripts")
-</body>
+	<head>
+	    <meta charset="utf-8">
+	    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	    <title>@Model.Title</title>
+
+	    @* Local Style libraries *@
+	    <link rel="stylesheet" href="~/Content/bootstrap.min.css">
+	    <link rel="stylesheet" href="~/Content/dropzone.css">
+
+	    @* Modernizr *@
+	    <script src="~/Scripts/modernizr-2.6.2.js"></script>
+	</head>
+
+	<body>
+
+		@* Page Body *@
+		<div class="container">
+			@RenderBody()
+	    </div>
+	   
+	    @* External Libraries *@
+	    <script src='http://cdn.ractivejs.org/latest/ractive.js'></script>
+
+	    @* Local Libraries *@
+	    <script src="~/Scripts/jquery-1.10.2.min.js"></script>
+	    <script src="~/Scripts/jquery.signalR-2.0.2.min.js"></script>
+	    <script src="~/Scripts/bootstrap.min.js"></script>
+	    <script src="~/Scripts/dropzone.js"></script>
+
+	    @* Signal R Hubs *@
+	    <script src="~/signalr/hubs"></script>
+
+	    @* Page Scripts *@
+	    @RenderSection("scripts")
+
+	</body>
 </html>
